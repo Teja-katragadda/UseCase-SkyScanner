@@ -8,14 +8,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class RetrofitNetwork {
-    private static final String BASIC_URL = "";
+    private static final String BASIC_URL = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices";
 
     @Provides
-    public ServiceCall getRetrofitInstance(){
+    public ServiceData getRetrofitInstance(){
         return new Retrofit.Builder()
                 .baseUrl(BASIC_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ServiceCall.class);
+                .build().create(ServiceData.class);
     }
 }

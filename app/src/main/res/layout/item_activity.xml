@@ -19,20 +19,30 @@
             android:id="@+id/roundTrip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/oneWay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/roundTrip"/>
+            app:layout_constraintLeft_toRightOf="@+id/roundTrip"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/origin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:text="@{itemViewModel.origin}"
+            app:layout_constraintLeft_toLeftOf="@+id/roundTrip"
+            app:layout_constraintTop_toBottomOf="@+id/roundTrip" />
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{itemViewModel.destination}"
+            app:layout_constraintTop_toBottomOf="@+id/oneWay"
+            app:layout_constraintLeft_toRightOf="@+id/origin"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>
